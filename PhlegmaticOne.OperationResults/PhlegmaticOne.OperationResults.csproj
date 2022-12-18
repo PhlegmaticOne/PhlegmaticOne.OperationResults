@@ -11,6 +11,9 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>OperationResult</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/PhlegmaticOne/PhlegmaticOne.OperationResults</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PhlegmaticOne/PhlegmaticOne.OperationResults</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

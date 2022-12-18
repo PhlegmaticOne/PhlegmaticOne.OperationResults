@@ -39,6 +39,32 @@ public class OperationResult
             ErrorMessage = errorMessage ?? "Operation error"
         };
     }
+
+    public static async Task<OperationResult<T>> FromActionResult<T>(Func<Task<T>> operation)
+    {
+        try
+        {
+            var result = await operation();
+            return Successful(result);
+        }
+        catch (Exception ex)
+        {
+            return Failed<T>(ex.Message);
+        }
+    }
+
+    public static async Task<OperationResult> FromActionResult(Func<Task> operation)
+    {
+        try
+        {
+            await operation();
+            return Success;
+        }
+        catch (Exception ex)
+        {
+            return Failed(ex.Message);
+        }
+    }
 }
 
 [Serializable]
